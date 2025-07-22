@@ -27,7 +27,7 @@ library(caret)
 # =============================================
 
 # Load Excel File
-movies <- read_excel("data/Movies with Box Office Data (2000 - 2024).xlsx")
+movies <- read_excel("data/sample_movies.xlsx")
 
 # Convert columns with commas to numeric
 movies$Worldwide <- as.numeric(gsub(",", "", movies$Worldwide))
