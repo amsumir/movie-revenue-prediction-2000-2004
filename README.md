@@ -1,24 +1,57 @@
-**Movie Revenue Prediction (2000–2024)**  
-A full-cycle analytics project that explores the relationship between movie metadata and box office performance, using real-world data from IMDb and Kaggle.
+#  Movie Revenue Prediction (2000–2024)
 
-Built with R, this project combines **data cleaning**, **exploratory analysis**, and **predictive modeling** to answer business-relevant questions such as:
+A business analytics project that explores and models movie revenue trends from 2000 to 2024 using IMDb metadata and global box office data. Built using **R**, the project demonstrates exploratory data analysis, regression, classification, and ensemble modeling.
 
-- Which genres tend to generate the most revenue?
-- Do directors, cast, or IMDb ratings significantly impact success?
-- Can we predict a movie’s box office performance before its release?
-- Does a higher IMDb rating actually mean higher revenue?
+##  Objective
 
-The project implements and compares several models:
--  **Logistic Regression** to classify hits (≥ $100M)
--  **Decision Trees** and **Random Forests** for interpretability and accuracy
--  Evaluation using Accuracy, AUC, RMSE, and R²
+Predict whether a movie will become a box office hit **before release**, based on metadata such as genre, cast, director, and IMDb rating.
 
-With insights into creative industry trends and hands-on use of R's analytics ecosystem (`dplyr`, `ggplot2`, `randomForest`, `caret`), this repository showcases a complete business analytics workflow from data acquisition to model evaluation.
+##  Research Questions
 
- Includes:
-- Clean and organized `.R` scripts
-- Visualizations and model outputs
-- A formal academic-style report (PDF)
-- Readable Markdown summaries
+1. Which genres tend to be the most profitable?
+2. Do directors, cast, or IMDb ratings impact revenue?
+3. Can we build a model to predict revenue before release?
+4. Do higher IMDb ratings correlate with higher revenue?
 
- Ideal for: data science portfolios, business analytics case studies, or movie data enthusiasts.
+##  Project Structure
+
+- **01_Data_Preparation**: Merging and cleaning IMDb and revenue data
+- **02_Exploratory_Analysis**: Visual and statistical insights into genre, rating, director impact
+- **03_Modeling**:
+  - Logistic Regression (Hit or Not)
+  - Decision Trees
+  - Random Forests
+- **04_Report**: Includes full academic-style PDF and summary results
+
+##  Tools & Tech
+
+- R programming (dplyr, ggplot2, caret, randomForest)
+- IMDb .tsv datasets + Kaggle box office data
+- Classification & Regression Modeling
+- Evaluation metrics (Accuracy, ROC AUC, RMSE, R²)
+
+##  Key Findings
+
+- **Top genres**: Action, Adventure, Fantasy
+- **Ratings & directors** are highly predictive
+- Even without ratings, **pre-release models** work reasonably well
+- Best models:  
+  -  Logistic Regression for hit prediction: **Accuracy ~71%**, AUC **0.73**  
+  -  Random Forest (full): **R² = 0.44**, RMSE ≈ **$176M**
+
+##  Data Sources
+
+- IMDb datasets: https://datasets.imdbws.com/
+- Kaggle: https://www.kaggle.com/datasets/parthdande/movies-box-office-collection-data-2000-2024
+
+##  Authors
+
+Team project for CMIS 566 – Business Analytics  
+ Sumir Acharya, Hannah Smith, Cristopher Isada, Craig Schafer  
+ Guided by: Dr. Prajakta Kolte
+
+##  License
+
+For academic and learning use only. Cite sources where applicable.
+
+Ideal for: data science portfolios, business analytics case studies, or movie data enthusiasts.
