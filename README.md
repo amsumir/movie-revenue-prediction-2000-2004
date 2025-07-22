@@ -1,57 +1,99 @@
-#  Movie Revenue Prediction (2000–2024)
+#  Movie Revenue Prediction (2000–2024) – All-in-One R Script
 
-A business analytics project that explores and models movie revenue trends from 2000 to 2024 using IMDb metadata and global box office data. Built using **R**, the project demonstrates exploratory data analysis, regression, classification, and ensemble modeling.
+This project explores and predicts box office revenue using movie metadata and financial data spanning 2000–2024. Built entirely in **R**, the project is self-contained in a single script that covers:
 
-##  Objective
+- Data loading & cleaning  
+- Feature engineering  
+- Exploratory data analysis (EDA)  
+- Multiple predictive models  
+- Evaluation metrics and visualizations  
 
-Predict whether a movie will become a box office hit **before release**, based on metadata such as genre, cast, director, and IMDb rating.
+It provides a hands-on look into how data science techniques can be applied to real-world entertainment data.
 
-##  Research Questions
+---
 
-1. Which genres tend to be the most profitable?
-2. Do directors, cast, or IMDb ratings impact revenue?
-3. Can we build a model to predict revenue before release?
-4. Do higher IMDb ratings correlate with higher revenue?
+##  Project Goals
 
-##  Project Structure
+1. Which genres are most profitable at the box office?  
+2. How do directors, cast, or IMDb ratings influence revenue?  
+3. Can we estimate a movie’s revenue before it’s released?  
+4. Does a higher IMDb rating correlate with greater financial success?
 
-- **01_Data_Preparation**: Merging and cleaning IMDb and revenue data
-- **02_Exploratory_Analysis**: Visual and statistical insights into genre, rating, director impact
-- **03_Modeling**:
-  - Logistic Regression (Hit or Not)
-  - Decision Trees
-  - Random Forests
-- **04_Report**: Includes full academic-style PDF and summary results
+---
 
-##  Tools & Tech
+##  Packages Used
 
-- R programming (dplyr, ggplot2, caret, randomForest)
-- IMDb .tsv datasets + Kaggle box office data
-- Classification & Regression Modeling
-- Evaluation metrics (Accuracy, ROC AUC, RMSE, R²)
+The script automatically installs required libraries:
 
-##  Key Findings
+- `readxl`, `ggplot2`, `rpart`, `rpart.plot`  
+- `randomForest`, `pROC`, `caret`
 
-- **Top genres**: Action, Adventure, Fantasy
-- **Ratings & directors** are highly predictive
-- Even without ratings, **pre-release models** work reasonably well
-- Best models:  
-  -  Logistic Regression for hit prediction: **Accuracy ~71%**, AUC **0.73**  
-  -  Random Forest (full): **R² = 0.44**, RMSE ≈ **$176M**
+---
+
+##  Key Components
+
+###  Data Cleaning & Feature Engineering
+- Handling missing values and data types
+- Removing extreme outliers (1st & 99th percentile)
+- Creating features: `mainGenre`, `starPower`, `recent`, `blockbusterDirector`
+
+###  Exploratory Data Analysis
+- Revenue histograms (log10 & billions)
+- Genre-wise median revenue bar chart
+- IMDb rating vs revenue scatter plot
+
+###  Modeling
+- **Linear Regression** (Full & Reduced)
+- **Decision Tree** (Full & Reduced)
+- **Random Forest** (Full & Reduced)
+- **Logistic Regression** for Hit Classification (> $100M)
+
+###  Evaluation Metrics
+- RMSE & R² for regression
+- Accuracy & AUC for classification
+- Confusion matrices, ROC curves
+- Variable importance plots for Random Forest
+
+---
+
+##  Sample Results
+
+| Model                        | Metric     | Result         |
+|-----------------------------|------------|----------------|
+| Linear Regression (Full)    | RMSE       | ~$130M         |
+| Random Forest (Full)        | R²         | 0.439          |
+| Logistic Regression (Full)  | Accuracy   | 71.1%          |
+|                             | AUC        | 0.73           |
+
+Even reduced models (without ratings) gave reasonable accuracy—useful for pre-release forecasting.
+
+---
 
 ##  Data Sources
 
-- IMDb datasets: https://datasets.imdbws.com/
-- Kaggle: https://www.kaggle.com/datasets/parthdande/movies-box-office-collection-data-2000-2024
+- 📁 [Kaggle – Box Office Data (2000–2024)](https://www.kaggle.com/datasets/parthdande/movies-box-office-collection-data-2000-2024)  
+- 🎬 [IMDb Datasets](https://datasets.imdbws.com/)
+
+---
 
 ##  Authors
 
-Team project for CMIS 566 – Business Analytics  
- Sumir Acharya, Hannah Smith, Cristopher Isada, Craig Schafer  
- Guided by: Dr. Prajakta Kolte
+**Sumir Sharma Acharya**  
+**Hannah Smith, Cristopher Isada, Craig Schafer**  
+Course: *CMIS 566 – Introduction to Business Analytics*  
+Instructor: Dr. Prajakta Kolte
 
-##  License
+---
 
-For academic and learning use only. Cite sources where applicable.
+##  Notes
 
-Ideal for: data science portfolios, business analytics case studies, or movie data enthusiasts.
+- Script output charts are saved in the `outputs/` folder.  
+- Modify or extend the script to include budget, release month, or franchise data for deeper analysis.  
+- Ideal for data science portfolios, analytics case studies, and movie industry research.
+
+---
+
+ **"Data doesn’t make a great movie — but it helps you bet on one."**
+
+
+
